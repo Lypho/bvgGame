@@ -1,5 +1,18 @@
 body {
-	color: #c4c4c4;
+	color: #d0d0d0;
 	background-color: #333;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#cr-stage {
+	margin: auto;
+}
+
+footer {
+	margin-top: 25px;
+	text-align: center;
 }

@@ -1,4 +1,4 @@
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Ben Fairclough' });
+  res.render('index', { title: 'Big Viking - Game Application' });
 };
