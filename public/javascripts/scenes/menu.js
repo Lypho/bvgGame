@@ -127,18 +127,18 @@
 			.unselectable()
 
 		// add click events
-		button_help
-			.bind('MouseDown', function() { mainButtonUiToggle('help', 'down') })
-			.bind('MouseUp', function() { mainButtonUiToggle('help', 'up') })
-		button_help2
-			.bind('MouseDown', function() { mainButtonUiToggle('help', 'down') })
-			.bind('MouseUp', function() { mainButtonUiToggle('help', 'up') })
 		button_play
-			.bind('MouseDown', function() { mainButtonUiToggle('play', 'down') })
-			.bind('MouseUp', function() { mainButtonUiToggle('play', 'up') })
+			.bind('MouseDown', playMouseDown)
+			.bind('MouseUp', playMouseUp)
 		button_play2
-			.bind('MouseDown', function() { mainButtonUiToggle('play', 'down') })
-			.bind('MouseUp', function() { mainButtonUiToggle('play', 'up') })
+			.bind('MouseDown', playMouseDown)
+			.bind('MouseUp', playMouseUp)
+		button_help
+			.bind('MouseDown', helpMouseDown)
+			.bind('MouseUp', helpMouseUp)
+		button_help2
+			.bind('MouseDown', helpMouseDown)
+			.bind('MouseUp', helpMouseUp)
 		button_sound
 			.bind('MouseUp', function(e) {
 				if(button_sound.has("b_sound_on")) {
@@ -157,63 +157,70 @@
 		// Auto-play main theme
 		Crafty.audio.play('menuTheme', 0.6)
 
-		// Private Functions
-		function mainButtonUiToggle(buttonType, direction) {
-			var c1Type = ''
-			var c2Type = ''
-			var c1Color = ''
-			var c2Color = ''
-			var currentEntity
-			var currentEntity2
-			var textEntity
-
-			// set first half of component name and current entity
-			if (buttonType === 'play') {
-				c1Type = 'b_play_'
-				c2Type = 'b_play_'
-				currentEntity = button_play
-				currentEntity2 = button_play2
-				textEntity = play_text
-			} else if(buttonType === 'help') {
-				c1Type = 'b_help_'
-				c2Type = 'b_help_'
-				currentEntity = button_help
-				currentEntity2 = button_help2
-				textEntity = help_text
-			}
-
-			// set last half of component name
-			if (direction === 'down') {
-				c1Color = 'yellow'
-				c2Color = 'black'
-			} else if(direction === 'up') {
-				c1Color = 'black'
-				c2Color = 'yellow'
-			}
-
+		// PRIVATE FUNCTIONS
+		// swaps play button images on mouse down
+		function playMouseDown() {
 			// execute ui toggle on buttons
-			currentEntity.toggleComponent(c1Type+c1Color, c2Type+c2Color)
+			button_play.toggleComponent('b_play_yellow', 'b_play_black')
 				.attr({
 					w: 48,
 					h: 48
 				})
-			currentEntity2.toggleComponent('b_blank_'.concat(c1Color), 'b_blank_'.concat(c2Color))
+			button_play2.toggleComponent('b_blank_black', 'b_blank_yellow')
 				.attr({
 					w: 200,
 					h: 48
 				})
-
-			// switch DOM text based on current state
-			if (c1Color === 'yellow') {
-				textEntity.textColor("#FFFFFF", 0.85)
-			} else if(c1Color === 'black') {
-				textEntity.textColor("#000000", 0.85)
-			}
-
+			play_text.textColor("#FFFFFF", 0.85)
 		}
 
+		// swaps play button images on mouse up
+		function playMouseUp() {
+			// execute ui toggle on buttons
+			button_play.toggleComponent('b_play_black', 'b_play_yellow')
+				.attr({
+					w: 48,
+					h: 48
+				})
+			button_play2.toggleComponent('b_blank_yellow', 'b_blank_black')
+				.attr({
+					w: 200,
+					h: 48
+				})
+			play_text.textColor("#000000", 0.85)
+		}
 
+		// swaps help button images on mouse down
+		function helpMouseDown() {
+			// execute ui toggle on buttons
+			button_help.toggleComponent('b_help_yellow', 'b_help_black')
+				.attr({
+					w: 48,
+					h: 48
+				})
+			button_help2.toggleComponent('b_blank_black', 'b_blank_yellow')
+				.attr({
+					w: 200,
+					h: 48
+				})
+			help_text.textColor("#FFFFFF", 0.85)
+		}
 
+		// swaps help button images on mouse up
+		function helpMouseUp() {
+			// execute ui toggle on buttons
+			button_help.toggleComponent('b_help_black', 'b_help_yellow')
+				.attr({
+					w: 48,
+					h: 48
+				})
+			button_help2.toggleComponent('b_blank_yellow', 'b_blank_black')
+				.attr({
+					w: 200,
+					h: 48
+				})
+			help_text.textColor("#000000", 0.85)
+		}
 
 	});
 })();
