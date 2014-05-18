@@ -3,8 +3,8 @@
 		Crafty.sprite('/images/interface_graphics/Background.jpg', {background: [0, 0, 568, 320]});
 		Crafty.sprite('/images/interface_graphics/Buttons.png'
 			, {
-				// (506px,1069px) is position of 1st column first icon
-				// (1837px,1069px) is position of 5th column first icon
+				// (126px,267px) is position of 1st column first icon
+				// (356px,267px) is position of 4th column first icon
 				b_blank_yellow: [140, 66, 139, 64],
 				b_blank_black: [594, 66, 139, 64],
 				b_play_yellow: [126, 267, 64, 64],
