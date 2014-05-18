@@ -26,7 +26,7 @@
 			})
 
 		// creates blank button with specified attributes
-		var button_play2 = Crafty.e('2D, Canvas, Mouse, b_blank_yellow')
+		var button_play2 = Crafty.e('2D, Canvas, Mouse, b_blank_black')
 			.attr({
 				x: Crafty.stage.elem.clientWidth*0.5 - 76,
 				y: 165,
@@ -35,7 +35,7 @@
 			})
 
 		// creates play button with specified attributes
-		var button_play = Crafty.e('2D, Canvas, Mouse, b_play_yellow')
+		var button_play = Crafty.e('2D, Canvas, Mouse, b_play_black')
 			.attr({
 				x: Crafty.stage.elem.clientWidth*0.5 - 124,
 				y: 165,
@@ -44,7 +44,7 @@
 			})
 
 		// creates blank button with specified attributes
-		var button_help2 = Crafty.e('2D, Canvas, Mouse, b_blank_yellow')
+		var button_help2 = Crafty.e('2D, Canvas, Mouse, b_blank_black')
 			.attr({
 				x: Crafty.stage.elem.clientWidth*0.5 - 76,
 				y: 165 + button_play._h,
@@ -53,7 +53,7 @@
 			})
 
 		// creates help button with specified attributes
-		var button_help = Crafty.e('2D, Canvas, Mouse, b_help_yellow')
+		var button_help = Crafty.e('2D, Canvas, Mouse, b_help_black')
 			.attr({
 				x: Crafty.stage.elem.clientWidth*0.5 - 124,
 				y: 165 + button_play._h,
@@ -104,7 +104,7 @@
 				'size': '24px',
 				'weight': 'bold'
 			})
-			.textColor('#000000', '0.85')
+			.textColor('#FFFFFF', '0.85')
 			.unselectable()
 
 		// creates help button title with css styling
@@ -123,27 +123,28 @@
 				'size': '24px',
 				'weight': 'bold'
 			})
-			.textColor('#000000', '0.85')
+			.textColor('#FFFFFF', '0.85')
 			.unselectable()
 
 		// add click events
 		button_play
-			.bind('MouseDown', switchPlayToBlackUI)
-			.bind('MouseUp', switchPlayToYellowUI)
+			.bind('MouseOver', switchPlayToYellowUI)
+			.bind('MouseOut', switchPlayToBlackUI)
+			.bind('MouseUp', startGame)
 		button_play2
-			.bind('MouseDown', switchPlayToBlackUI)
-			.bind('MouseUp', switchPlayToYellowUI)
+			.bind('MouseOver', switchPlayToYellowUI)
+			.bind('MouseOut', switchPlayToBlackUI)
+			.bind('MouseUp', startGame)
 		button_help
-			.bind('MouseDown', switchHelpToBlackUI)
-			.bind('MouseUp', switchHelpToYellowUI)
+			.bind('MouseOver', switchHelpToYellowUI)
+			.bind('MouseOut', switchHelpToBlackUI)
+			.bind('MouseUp', startHelp)
 		button_help2
-			.bind('MouseDown', switchHelpToBlackUI)
-			.bind('MouseUp', switchHelpToYellowUI)
+			.bind('MouseOver', switchHelpToYellowUI)
+			.bind('MouseOut', switchHelpToBlackUI)
+			.bind('MouseUp', startHelp)
 		button_sound
 			.bind('MouseUp', soundUiToggle)
-
-		// Auto-play main theme
-		Crafty.audio.play('menuTheme', 0.6)
 
 		// PRIVATE FUNCTIONS
 		// swaps play button images on mouse down
@@ -176,7 +177,6 @@
 					h: 48
 				})
 			play_text.textColor("#000000", 0.85)
-			console.log("play option selected")
 		}
 
 		// swaps help button images on mouse down
@@ -209,7 +209,6 @@
 					h: 48
 				})
 			help_text.textColor("#000000", 0.85)
-			console.log("help option selected")
 		}
 
 		// swaps sound button image on mouse uo
@@ -225,6 +224,19 @@
 					Crafty.audio.unmute()
 					console.log("sound unmuted")
 				}
+		}
+
+		// switch to game scene and stop theme music
+		function startGame() {
+			console.log("play option selected")
+			Crafty.audio.remove()
+			Crafty.scene('game')
+		}
+
+		// switch to help scene and stop theme music
+		function startHelp() {
+			console.log("help option selected")
+			Crafty.scene('help')
 		}
 
 	});

@@ -2,6 +2,7 @@ body {
 	color: #d0d0d0;
 	background-color: #333;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0px;
 }
 
 h1 {
@@ -16,4 +17,10 @@ h1 {
 footer {
 	margin-top: 25px;
 	text-align: center;
+}
+
+@media only screen and (max-device-height: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    #cr-stage {
+    	margin: 0px;
+    }
 }
