@@ -1,8 +1,6 @@
 (function() {
 	window.bvgGame = window.bvgGame || {}
-	bvgGame.SMALL_TILE_SIZE = 16
-	bvgGame.MEDIUM_TILE_SIZE = 32
-	bvgGame.LARGE_TILE_SIZE = 64
+	bvgGame.TILE_SIZE = 16
 	bvgGame.IS_MOBILE = false
 
 	window.onload = function() {

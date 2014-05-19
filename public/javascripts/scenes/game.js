@@ -17,62 +17,93 @@
 				m_gray: [0, 80, 32, 32],
 				m_egf: [32, 112, 32, 32]
 			});
+		Crafty.sprite('/images/interface_graphics/Windows.png'
+			, {
+				health_bar: [681, 918, 188, 40],
+				health: [719, 861, 139, 21],
+				hud_bar: [197, 136, 720, 111]
+			});
 
 		// draw floor entities
-		for(var y = 0; y < 20; y++) {
+		for(var y = 2; y < 20; y++) {
 			for(var x = 0; x < 36; x++) {
 				if  (x === 29) {
 					Crafty.e('2D, Canvas, s_caution')
 						.attr({
-							x: bvgGame.SMALL_TILE_SIZE * x,
-							y: bvgGame.SMALL_TILE_SIZE * y,
+							x: bvgGame.TILE_SIZE * x,
+							y: bvgGame.TILE_SIZE * y,
 						})
-				} else if(x > 29) {
-					Crafty.e('2D, Canvas, s_darkgray')
-						.origin(8, 8)
+				} else if(x > 29 && (x % 2 === 0) && (y % 2 === 0)) {
+					Crafty.e('2D, Canvas, m_gray')
+						.origin(16, 16)
 						.attr({
-							x: bvgGame.SMALL_TILE_SIZE * x,
-							y: bvgGame.SMALL_TILE_SIZE * y,
+							x: bvgGame.TILE_SIZE * x,
+							y: bvgGame.TILE_SIZE * y,
 							rotation: -90
 						})
 				} else if(x < 29) {
-					var rng = Crafty.math.randomInt(1, 16)
-					var block_type = ''
-
-					if (rng >= 1 && rng <= 12) {
-						block_type = 's_gray'
-					} else if(rng === 13) {
-						block_type = 's_gray_dirty'
-					} else if(rng === 14) {
-						block_type = 's_gray_cracked'
-					} else if(rng === 15) {
-						block_type = 's_gray_dented'
-					} else if(rng === 16) {
-						block_type = 's_gray_rusty'
-					}
-
-					Crafty.e('2D, Canvas, '.concat(block_type))
+					Crafty.e('2D, Canvas, s_blue_carpet')
 						.attr({
-							x: bvgGame.SMALL_TILE_SIZE * x,
-							y: bvgGame.SMALL_TILE_SIZE * y,
+							x: bvgGame.TILE_SIZE * x,
+							y: bvgGame.TILE_SIZE * y,
 						})
 				}
 			}
 		}
 
+		// draw EGF logos
 		Crafty.e('2D, Canvas, m_egf')
 			.origin(16, 16)
 			.attr({
-				x: bvgGame.SMALL_TILE_SIZE * 32,
-				y: bvgGame.SMALL_TILE_SIZE * 4,
+				x: bvgGame.TILE_SIZE * 32,
+				y: bvgGame.TILE_SIZE * 4,
 				rotation: -90
 			})
 		Crafty.e('2D, Canvas, m_egf')
 			.origin(16, 16)
 			.attr({
-				x: bvgGame.SMALL_TILE_SIZE * 32,
-				y: bvgGame.SMALL_TILE_SIZE * 14,
+				x: bvgGame.TILE_SIZE * 32,
+				y: bvgGame.TILE_SIZE * 16,
 				rotation: -90
+			})
+
+		// draw HUD
+		Crafty.e('2D, Canvas, hud_bar')
+			.attr({
+				x: 0,
+				y: 0,
+				w: 189,
+				h: 32
+			})
+		Crafty.e('2D, Canvas, hud_bar')
+			.attr({
+				x: 189,
+				y: 0,
+				w: 190,
+				h: 32
+			})
+		Crafty.e('2D, Canvas, hud_bar')
+			.attr({
+				x: 379,
+				y: 0,
+				w: 189,
+				h: 32
+			})
+		Crafty.e('2D, Canvas, health_bar')
+			.attr({
+				x: 450,
+				y: 292,
+				w: 114,
+				h: 24,
+				z: 9000
+			})
+		Crafty.e('2D, Canvas, health')
+			.attr({
+				x: 473,
+				y: 298,
+				w: 85,
+				h: 13,
+				z: 9000
 			})
 
 		// Round One Aduio
