@@ -1,29 +1,6 @@
 (function() {
 	Crafty.scene('game', function() {
 		console.log('--GAME SCENE STARTED--')
-		Crafty.sprite('/images/game_graphics/tileset.png'
-			, {
-				s_green: [96, 432, 16, 16],
-				s_gray: [32, 96, 16, 16],
-				s_gray_dirty: [48, 96, 16, 16],
-				s_gray_cracked: [176, 48, 16, 16],
-				s_gray_dented: [160, 80, 16, 16],
-				s_gray_rusty: [176, 96, 16, 16],
-				s_darkgray: [112, 304, 16, 16],
-				s_blue: [0, 304, 16, 16],
-				s_blue_carpet: [160, 0, 16, 16],
-				s_cross: [16, 320, 16, 16],
-				s_caution: [160, 64, 16, 16],
-				m_gray: [0, 80, 32, 32],
-				m_egf: [32, 112, 32, 32]
-			});
-		Crafty.sprite('/images/interface_graphics/Windows.png'
-			, {
-				health_bar: [681, 918, 188, 40],
-				health: [719, 861, 139, 21],
-				hud_bar: [197, 136, 720, 111]
-			});
-
 		// draw floor entities
 		for(var y = 2; y < 20; y++) {
 			for(var x = 0; x < 36; x++) {
@@ -32,6 +9,7 @@
 						.attr({
 							x: bvgGame.TILE_SIZE * x,
 							y: bvgGame.TILE_SIZE * y,
+							z: 1
 						})
 				} else if(x > 29 && (x % 2 === 0) && (y % 2 === 0)) {
 					Crafty.e('2D, Canvas, m_gray')
@@ -39,13 +17,17 @@
 						.attr({
 							x: bvgGame.TILE_SIZE * x,
 							y: bvgGame.TILE_SIZE * y,
+							z: 1,
 							rotation: -90
 						})
 				} else if(x < 29) {
 					Crafty.e('2D, Canvas, s_blue_carpet')
+						.origin(8,8)
 						.attr({
 							x: bvgGame.TILE_SIZE * x,
 							y: bvgGame.TILE_SIZE * y,
+							z: 1,
+							rotation: Crafty.math.randomElementOfArray([0,90,180,270])
 						})
 				}
 			}
@@ -57,6 +39,7 @@
 			.attr({
 				x: bvgGame.TILE_SIZE * 32,
 				y: bvgGame.TILE_SIZE * 4,
+				z: 1,
 				rotation: -90
 			})
 		Crafty.e('2D, Canvas, m_egf')
@@ -64,9 +47,37 @@
 			.attr({
 				x: bvgGame.TILE_SIZE * 32,
 				y: bvgGame.TILE_SIZE * 16,
+				z: 1,
 				rotation: -90
 			})
 
+		// draw main base
+		Crafty.e('2D, Canvas, m_desk')
+			.origin(24, 16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 32 + 16,
+				y: bvgGame.TILE_SIZE * 10,
+				z: 10,
+				rotation: 90
+			})
+
+		// draw default barbed wire
+		for (var y = 2; y < 20; y++) {
+			var x = 0
+
+			if (y >= 6 && y <= 14) {
+				x = 23
+			} else {
+				x = 26
+			}
+
+			Crafty.e('2D, Canvas, s_barbed_wire_v')
+				.attr({
+					x: bvgGame.TILE_SIZE * x,
+					y: bvgGame.TILE_SIZE * y,
+					z: 2
+				})
+		};
 		// draw HUD
 		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
@@ -89,21 +100,21 @@
 				w: 189,
 				h: 32
 			})
-		Crafty.e('2D, Canvas, health_bar')
+		Crafty.e('2D, Canvas, health_bar_yellow')
 			.attr({
 				x: 450,
 				y: 292,
 				w: 114,
 				h: 24,
-				z: 9000
+				z: 100
 			})
-		Crafty.e('2D, Canvas, health')
+		Crafty.e('2D, Canvas, health_yellow')
 			.attr({
 				x: 473,
 				y: 298,
 				w: 85,
 				h: 13,
-				z: 9000
+				z: 100
 			})
 
 		// Round One Aduio

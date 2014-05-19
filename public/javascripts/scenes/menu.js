@@ -1,21 +1,5 @@
 (function() {
 	Crafty.scene('menu', function() {
-		Crafty.sprite('/images/interface_graphics/Background.jpg', {background: [0, 0, 568, 320]});
-		Crafty.sprite('/images/interface_graphics/Buttons.png'
-			, {
-				// (126px,267px) is position of 1st column first icon
-				// (356px,267px) is position of 4th column first icon
-				b_blank_yellow: [140, 66, 139, 64],
-				b_blank_black: [594, 66, 139, 64],
-				b_play_yellow: [126, 267, 64, 64],
-				b_play_black: [356, 267, 64, 64],
-				b_help_yellow: [126, 1131, 64, 64],
-				b_help_black: [356, 1131, 64, 64],
-				b_sound_on: [126, 1758, 64, 64],
-				b_sound_off: [356, 1758, 64, 64]
-
-			});
-
 		// creates background with specified attributes
 		var bg = Crafty.e('2D, Canvas, background')
 			.attr({
