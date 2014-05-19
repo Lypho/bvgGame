@@ -230,6 +230,7 @@
 		function startGame() {
 			console.log("play option selected")
 			Crafty.audio.remove()
+			Crafty.audio.unmute()
 			Crafty.scene('game')
 		}
 

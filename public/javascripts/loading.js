@@ -9,13 +9,13 @@
 			, '/images/interface_graphics/Windows.png']
 		, function() {
 			// Auto-play main theme
-			Crafty.audio.play('menuTheme', 0.6)
+			Crafty.audio.play('menuTheme', 1, 0.4)
 			Crafty.scene('menu')
 		});
 
 		Crafty.audio.add({
-		menuTheme: ['/audio/starquake.mp3',
-					'/audio/starquake.wav']
+			menuTheme: ['/audio/starquake.mp3'],
+			roundOne: ['/audio/RoundOne.mp3']
 		})
 
 		// Display loading text
