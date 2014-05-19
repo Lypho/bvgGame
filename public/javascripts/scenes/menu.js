@@ -139,7 +139,7 @@
 					w: 48,
 					h: 48
 				})
-			button_play2.toggleComponent('b_blank_black', 'b_blank_yellow')
+			button_play2.toggleComponent('b_blank_yellow', 'b_blank_black')
 				.attr({
 					w: 200,
 					h: 48
@@ -155,7 +155,7 @@
 					w: 48,
 					h: 48
 				})
-			button_play2.toggleComponent('b_blank_yellow', 'b_blank_black')
+			button_play2.toggleComponent('b_blank_black', 'b_blank_yellow')
 				.attr({
 					w: 200,
 					h: 48
@@ -171,7 +171,7 @@
 					w: 48,
 					h: 48
 				})
-			button_help2.toggleComponent('b_blank_black', 'b_blank_yellow')
+			button_help2.toggleComponent('b_blank_yellow', 'b_blank_black')
 				.attr({
 					w: 200,
 					h: 48
@@ -187,7 +187,7 @@
 					w: 48,
 					h: 48
 				})
-			button_help2.toggleComponent('b_blank_yellow', 'b_blank_black')
+			button_help2.toggleComponent('b_blank_black', 'b_blank_yellow')
 				.attr({
 					w: 200,
 					h: 48

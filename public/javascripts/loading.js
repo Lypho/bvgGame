@@ -29,6 +29,10 @@
 			b_play_black: 		[356, 267, 64, 64],
 			b_help_yellow: 		[126, 1131, 64, 64],
 			b_help_black: 		[356, 1131, 64, 64],
+			b_exit_yellow: 		[460, 733, 64, 64],
+			b_exit_black: 		[689, 733, 64, 64],
+			b_settings_yellow: 	[459, 894, 64, 64],
+			b_settings_black: 	[689, 894, 64, 64],
 			b_sound_on: 		[126, 1758, 64, 64],
 			b_sound_off: 		[356, 1758, 64, 64]
 
@@ -58,7 +62,7 @@
 			health_blue: 		[719, 887, 139, 21],
 			health_bar_yellow: 	[681, 1098, 188, 40],
 			health_yellow: 		[889, 1106, 139, 21],
-			hud_bar: 			[197, 136, 720, 111]
+			hud_bar: 			[197, 136, 681, 111]
 		});
 
 		// Display loading text

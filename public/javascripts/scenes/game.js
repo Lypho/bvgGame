@@ -83,23 +83,33 @@
 			.attr({
 				x: 0,
 				y: 0,
-				w: 189,
-				h: 32
+				w: 179,
+				h: 34
 			})
 		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
-				x: 189,
+				x: 178,
 				y: 0,
-				w: 190,
-				h: 32
+				w: 179,
+				h: 34
 			})
 		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
-				x: 379,
+				x: 357,
 				y: 0,
-				w: 189,
+				w: 179,
+				h: 34
+			})
+		var button_settings = Crafty.e('2D, Canvas, Mouse, b_settings_black')
+			.attr({
+				x: 536,
+				y: 0,
+				w: 32,
 				h: 32
 			})
+			.bind('MouseOver', switchSettingsToYellowUI)
+			.bind('MouseOut', switchSettingsToBlackUI)
+			.bind('MouseUp', openSettingsMenu)
 		Crafty.e('2D, Canvas, health_bar_yellow')
 			.attr({
 				x: 450,
@@ -119,5 +129,28 @@
 
 		// Round One Aduio
 		Crafty.audio.play('roundOne')
+
+		// swaps settings button images on mouse over
+		function switchSettingsToBlackUI() {
+			button_settings.toggleComponent('b_settings_yellow', 'b_settings_black')
+				.attr({
+					w: 32,
+					h: 32
+				})
+		}
+
+		// swaps settings button images on mouse out
+		function switchSettingsToYellowUI() {
+			button_settings.toggleComponent('b_settings_black', 'b_settings_yellow')
+				.attr({
+					w: 32,
+					h: 32
+				})
+		}
+
+		// Opens Settings Menu
+		function openSettingsMenu() {
+
+		}
 	})
 })();
