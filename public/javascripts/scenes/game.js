@@ -1,6 +1,12 @@
 (function() {
 	Crafty.scene('game', function() {
 		console.log('--GAME SCENE STARTED--')
+
+		var round = 0
+		var score = 0
+		var current_phase = 'battle'
+		var player;
+
 		// draw floor entities
 		for(var y = 2; y < 20; y++) {
 			for(var x = 0; x < 36; x++) {
@@ -71,7 +77,7 @@
 				x = 26
 			}
 
-			Crafty.e('2D, Canvas, s_barbed_wire_v')
+			Crafty.e('2D, Canvas, s_barbed_wire_damaged_v')
 				.attr({
 					x: bvgGame.TILE_SIZE * x,
 					y: bvgGame.TILE_SIZE * y,
@@ -125,6 +131,29 @@
 				w: 85,
 				h: 13,
 				z: 100
+			})
+
+
+		player = Crafty.e('2D, Canvas, Player, Collision, Fourway, Keyboard, mc_left')
+			.attr({
+				x: Crafty.stage.elem.clientWidth/2,
+				y: Crafty.stage.elem.clientHeight/2,
+				z: 50
+			})
+			.fourway(2)
+			.bind('KeyDown', function() {
+				if (this.isDown(Crafty.keys.UP_ARROW) || this.isDown(Crafty.keys.W)) {
+					player._newDirection = 'up'
+				}
+				if (this.isDown(Crafty.keys.DOWN_ARROW) || this.isDown(Crafty.keys.S)) {
+					player._newDirection = 'down'
+				}
+				if (this.isDown(Crafty.keys.LEFT_ARROW) || this.isDown(Crafty.keys.A)) {
+					player._newDirection = 'left'
+				}
+				if (this.isDown(Crafty.keys.RIGHT_ARROW) || this.isDown(Crafty.keys.D)) {
+					player._newDirection = 'right'
+				}
 			})
 
 		// Round One Aduio
