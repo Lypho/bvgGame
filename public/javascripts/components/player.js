@@ -17,6 +17,26 @@
 					this._y = (Crafty.stage.elem.clientHeight - this._h)
 				}
 			})
+			this.bind('NewDirection', function(dir) {
+				this.removeComponent('mc_left')
+				this.removeComponent('mc_right')
+				this.removeComponent('mc_down')
+				this.removeComponent('mc_up')
+
+				if (dir.x < 0) {
+					this.addComponent('mc_left')
+					this._direction = 'left'
+				} else if (dir.x > 0) {
+					this.addComponent('mc_right')
+					this._direction = 'right'
+				} else if (dir.y < 0) {
+					this.addComponent('mc_up')
+					this._direction = 'up'
+				} else if (dir.y > 0) {
+					this.addComponent('mc_down')
+					this._direction = 'down'
+				}
+			})
 		},
 	})
 }())

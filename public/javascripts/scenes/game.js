@@ -141,26 +141,6 @@
 				z: 50
 			})
 			.fourway(2)
-			.bind('NewDirection', function(dir) {
-				player.removeComponent('mc_left')
-				player.removeComponent('mc_right')
-				player.removeComponent('mc_down')
-				player.removeComponent('mc_up')
-
-				if (dir.x < 0) {
-					player.addComponent('mc_left')
-					player._direction = 'left'
-				} else if (dir.x > 0) {
-					player.addComponent('mc_right')
-					player._direction = 'right'
-				} else if (dir.y < 0) {
-					player.addComponent('mc_up')
-					player._direction = 'up'
-				} else if (dir.y > 0) {
-					player.addComponent('mc_down')
-					player._direction = 'down'
-				}
-			})
 
 		// Round One Aduio
 		Crafty.audio.play('roundOne')
