@@ -141,18 +141,23 @@
 				z: 50
 			})
 			.fourway(2)
-			.bind('KeyDown', function() {
-				if (this.isDown(Crafty.keys.UP_ARROW) || this.isDown(Crafty.keys.W)) {
-					player._newDirection = 'up'
+			.bind('NewDirection', function(dir) {
+				console.log(dir.x + ":" + dir.y)
+				if (dir.x === -2 || dir.x === 2 || dir.y === -2 || dir.y === 2) {
+					player.removeComponent('mc_left')
+					player.removeComponent('mc_right')
+					player.removeComponent('mc_down')
+					player.removeComponent('mc_up')
 				}
-				if (this.isDown(Crafty.keys.DOWN_ARROW) || this.isDown(Crafty.keys.S)) {
-					player._newDirection = 'down'
-				}
-				if (this.isDown(Crafty.keys.LEFT_ARROW) || this.isDown(Crafty.keys.A)) {
-					player._newDirection = 'left'
-				}
-				if (this.isDown(Crafty.keys.RIGHT_ARROW) || this.isDown(Crafty.keys.D)) {
-					player._newDirection = 'right'
+
+				if (dir.x === -2) {
+					player.addComponent('mc_left')
+				} else if (dir.x === 2) {
+					player.addComponent('mc_right')
+				} else if (dir.y === -2) {
+					player.addComponent('mc_up')
+				} else if (dir.y === 2) {
+					player.addComponent('mc_down')
 				}
 			})
 
