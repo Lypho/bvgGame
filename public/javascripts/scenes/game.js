@@ -106,16 +106,16 @@
 				w: 179,
 				h: 34
 			})
-		var button_settings = Crafty.e('2D, Canvas, Mouse, b_settings_black')
+		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
 				x: 536,
 				y: 0,
 				w: 32,
 				h: 32
 			})
-			.bind('MouseOver', switchSettingsToYellowUI)
-			.bind('MouseOut', switchSettingsToBlackUI)
-			.bind('MouseUp', openSettingsMenu)
+			.bind('MouseOver', switchExitToYellowUI)
+			.bind('MouseOut', switchExitToBlackUI)
+			.bind('MouseUp', exitGame)
 		Crafty.e('2D, Canvas, health_bar_yellow')
 			.attr({
 				x: 450,
@@ -134,7 +134,7 @@
 			})
 
 
-		player = Crafty.e('2D, Canvas, Player, Collision, Fourway, Keyboard, mc_left')
+		player = Crafty.e('2D, Canvas, Player, Collision, Fourway, mc_left')
 			.attr({
 				x: Crafty.stage.elem.clientWidth/2,
 				y: Crafty.stage.elem.clientHeight/2,
@@ -165,18 +165,18 @@
 		// Round One Aduio
 		Crafty.audio.play('roundOne')
 
-		// swaps settings button images on mouse over
-		function switchSettingsToBlackUI() {
-			button_settings.toggleComponent('b_settings_yellow', 'b_settings_black')
+		// swaps exit button images on mouse over
+		function switchExitToBlackUI() {
+			button_exit.toggleComponent('b_exit_yellow', 'b_exit_black')
 				.attr({
 					w: 32,
 					h: 32
 				})
 		}
 
-		// swaps settings button images on mouse out
-		function switchSettingsToYellowUI() {
-			button_settings.toggleComponent('b_settings_black', 'b_settings_yellow')
+		// swaps exit button images on mouse out
+		function switchExitToYellowUI() {
+			button_exit.toggleComponent('b_exit_black', 'b_exit_yellow')
 				.attr({
 					w: 32,
 					h: 32
@@ -184,8 +184,8 @@
 		}
 
 		// Opens Settings Menu
-		function openSettingsMenu() {
-
+		function exitGame() {
+			Crafty.scene('menu')
 		}
 	})
 })();

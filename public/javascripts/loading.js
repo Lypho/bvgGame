@@ -29,7 +29,7 @@
 			b_play_black: 				[356, 267, 64, 64],
 			b_help_yellow: 				[126, 1131, 64, 64],
 			b_help_black: 				[356, 1131, 64, 64],
-			b_exit_yellow: 				[460, 733, 64, 64],
+			b_exit_yellow: 				[459, 733, 64, 64],
 			b_exit_black: 				[689, 733, 64, 64],
 			b_settings_yellow: 			[459, 894, 64, 64],
 			b_settings_black: 			[689, 894, 64, 64],
