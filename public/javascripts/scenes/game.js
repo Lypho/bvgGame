@@ -143,21 +143,24 @@
 			.fourway(2)
 			.bind('NewDirection', function(dir) {
 				console.log(dir.x + ":" + dir.y)
-				if (dir.x === -2 || dir.x === 2 || dir.y === -2 || dir.y === 2) {
-					player.removeComponent('mc_left')
-					player.removeComponent('mc_right')
-					player.removeComponent('mc_down')
-					player.removeComponent('mc_up')
-				}
 
-				if (dir.x === -2) {
+				player.removeComponent('mc_left')
+				player.removeComponent('mc_right')
+				player.removeComponent('mc_down')
+				player.removeComponent('mc_up')
+
+				if (dir.x < 0) {
 					player.addComponent('mc_left')
-				} else if (dir.x === 2) {
+					player._direction = 'left'
+				} else if (dir.x > 0) {
 					player.addComponent('mc_right')
-				} else if (dir.y === -2) {
+					player._direction = 'right'
+				} else if (dir.y < 0) {
 					player.addComponent('mc_up')
-				} else if (dir.y === 2) {
+					player._direction = 'up'
+				} else if (dir.y > 0) {
 					player.addComponent('mc_down')
+					player._direction = 'down'
 				}
 			})
 
