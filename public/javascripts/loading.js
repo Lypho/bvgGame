@@ -9,8 +9,6 @@
 			, '/images/interface_graphics/Buttons.png'
 			, '/images/interface_graphics/Windows.png']
 		, function() {
-			// Auto-play main theme
-			Crafty.audio.play('menuTheme', 1, 0.4)
 			Crafty.scene('menu')
 		});
 

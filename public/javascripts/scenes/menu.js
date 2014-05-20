@@ -130,6 +130,9 @@
 		button_sound
 			.bind('MouseUp', soundUiToggle)
 
+		// Auto-play main theme
+		Crafty.audio.play('menuTheme', 1, 0.4)
+
 		// PRIVATE FUNCTIONS
 		// swaps play button images on mouse down
 		function switchPlayToBlackUI() {
@@ -223,6 +226,5 @@
 			console.log("help option selected")
 			Crafty.scene('help')
 		}
-
 	});
 })();

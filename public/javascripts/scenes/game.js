@@ -165,6 +165,7 @@
 
 		// Opens Settings Menu
 		function exitGame() {
+			Crafty.audio.stop()
 			Crafty.scene('menu')
 		}
 	})
