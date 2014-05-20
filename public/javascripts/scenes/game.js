@@ -142,8 +142,6 @@
 			})
 			.fourway(2)
 			.bind('NewDirection', function(dir) {
-				console.log(dir.x + ":" + dir.y)
-
 				player.removeComponent('mc_left')
 				player.removeComponent('mc_right')
 				player.removeComponent('mc_down')
