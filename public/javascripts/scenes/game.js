@@ -297,7 +297,7 @@
 				h: 7,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, m_block')
+		Crafty.e('2D, Canvas, Mouse, m_block')
 			.attr({
 				x: 246,
 				y: 10,
@@ -305,7 +305,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, m_block_gray')
+			.bind('MouseUp', function(e){createItem('Obstacle, m_block', 28, 28, 0, 50)})
+		Crafty.e('2D, Canvas, Mouse, m_block_gray')
 			.attr({
 				x: 266,
 				y: 10,
@@ -313,7 +314,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, m_barrier')
+			.bind('MouseUp', function(e){createItem('Obstacle, m_block_gray', 28, 28, 0, 50)})
+		Crafty.e('2D, Canvas, Mouse, m_barrier')
 			.attr({
 				x: 290,
 				y: 8,
@@ -321,7 +323,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, m_box')
+			.bind('MouseUp', function(e){createItem('Obstacle, m_barrier', 16, 32, 0, 50)})
+		Crafty.e('2D, Canvas, Mouse, m_box')
 			.attr({
 				x: 306,
 				y: 10,
@@ -329,6 +332,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_box', 28, 28, 0, 50)})
 		// 100 Points Bar
 		Crafty.e('2D, Canvas, points_100')
 			.attr({
@@ -338,7 +342,7 @@
 				h: 7,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, l_ice_pit')
+		Crafty.e('2D, Canvas, Mouse, l_ice_pit')
 			.attr({
 				x: 68,
 				y: 10,
@@ -346,7 +350,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, m_pillar')
+			.bind('MouseUp', function(e){createItem('Obstacle, l_ice_pit', 48, 48, 0, 100)})
+		Crafty.e('2D, Canvas, Mouse, m_pillar')
 			.attr({
 				x: 88,
 				y: 10,
@@ -354,7 +359,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, s_foot_trap')
+			.bind('MouseUp', function(e){createItem('Obstacle, m_pillar', 32, 32, 0, 100)})
+		Crafty.e('2D, Canvas, Mouse, s_foot_trap')
 			.attr({
 				x: 108,
 				y: 10,
@@ -362,7 +368,8 @@
 				h: 16,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, s_mine')
+			.bind('MouseUp', function(e){createItem('Obstacle, s_foot_trap', 16, 16, 0, 100)})
+		Crafty.e('2D, Canvas, Mouse, s_mine')
 			.attr({
 				x: 128,
 				y: 10,
@@ -370,6 +377,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_mine', 16, 16, 0, 100)})
 		// Exit Button
 		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
@@ -432,7 +440,7 @@
 				y: bvgGame.HEIGHT * 0.5,
 				z: 50,
 				_player_speed: 2,
-				_score: 100,
+				_score: 1000,
 			})
 			.fourway(2)
 			.collision()
