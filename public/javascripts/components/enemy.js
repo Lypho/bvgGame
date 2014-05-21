@@ -14,7 +14,8 @@
 
 				if(Crafty.frame() % frame_modifier === 0) {
 					// move
-					this.x += this._enemy_speed
+					if (!this._stopped)
+						this.x += this._enemy_speed
 					// shoot
 					if(Crafty.math.randomInt(0,1) === 1) {
 						Crafty.e('2D, DOM, Collision, Mc_Proj, mc_projectile')

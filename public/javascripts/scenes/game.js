@@ -511,6 +511,12 @@
 				}, function(){
 					this._slow = false
 				})
+				.onHit('Foot_Trap', function(){
+					this._stopped = true
+					this.resetAnimation()
+					this.pauseAnimation()
+					this.hit('Foot_Trap')[0].obj.destroy()
+				})
 		}
 		spawnEnemy()
 
