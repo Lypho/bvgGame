@@ -11,6 +11,8 @@
 			, '/images/interface_graphics/Buttons.png'
 			, '/images/interface_graphics/Windows.png']
 		, function() {
+			// Auto-play main theme
+			Crafty.audio.play('menuTheme', 1, 0.4)
 			Crafty.scene('menu')
 		});
 
@@ -34,7 +36,13 @@
 			b_settings_yellow: 			[459, 894, 64, 64],
 			b_settings_black: 			[689, 894, 64, 64],
 			b_sound_on: 				[126, 1758, 64, 64],
-			b_sound_off: 				[356, 1758, 64, 64]
+			b_sound_off: 				[356, 1758, 64, 64],
+			b_right_arrow_yellow: 		[126, 571, 64, 64],
+			b_right_arrow_black: 		[356, 571, 64, 64],
+			b_left_arrow_yellow: 		[126, 650, 64, 64],
+			b_left_arrow_black: 		[356, 650, 64, 64],
+			b_home_yellow: 				[459, 1052, 64, 64],
+			b_home_black: 				[689, 1052, 64, 64],
 		});
 		Crafty.sprite('/images/game_graphics/tileset.png', {
 			s_green: 					[96, 432, 16, 16],
@@ -84,6 +92,7 @@
 			health_yellow: 				[890, 1107, 138, 19],
 			hud_bar: 					[197, 136, 681, 111],
 			points_bar: 				[680, 1008, 129, 39],
+			help_box: 					[165, 1510, 690, 346],
 		});
 		Crafty.sprite('/images/game_graphics/characters.png', {
 			mc_up: 						[325, 83, 16, 20],

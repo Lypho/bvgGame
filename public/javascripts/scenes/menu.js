@@ -58,16 +58,16 @@
 		Crafty.e('2D, DOM, Text')
 			.attr({
 				x: 0,
-				y: 40,
+				y: 80,
 				w: bvgGame.WIDTH,
-				h: 80
+				h: 45
 			})
-			.text("bvgGame")
+			.text("Mantle of Responsibility")
 			.css({
 				'text-align': 'center',
 			})
 			.textFont({
-				'size': '80px',
+				'size': '45px',
 				'weight': 'bold'
 			})
 			.unselectable()
@@ -129,9 +129,6 @@
 			.bind('MouseUp', startHelp)
 		button_sound
 			.bind('MouseUp', soundUiToggle)
-
-		// Auto-play main theme
-		Crafty.audio.play('menuTheme', 1, 0.4)
 
 		// PRIVATE FUNCTIONS
 		// swaps play button images on mouse down

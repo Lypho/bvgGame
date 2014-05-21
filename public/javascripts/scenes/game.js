@@ -491,6 +491,7 @@
 		// exits the game
 		bvgGame.exitGame = function() {
 			Crafty.audio.stop()
+			Crafty.audio.play('menuTheme', 1, 0.4)
 			Crafty.scene('menu')
 		}
 
