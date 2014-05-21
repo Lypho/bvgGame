@@ -71,7 +71,7 @@
 				.attr({
 					x: bvgGame.TILE_SIZE * x,
 					y: bvgGame.TILE_SIZE * y,
-					z: 2
+					z: 2,
 				})
 				.collision([5,2], [12,2], [12,14], [5,14])
 		};
@@ -83,8 +83,9 @@
 				x: bvgGame.TILE_SIZE * 32 + 16,
 				y: bvgGame.TILE_SIZE * 10,
 				z: 10,
-				rotation: 90
+				rotation: 90,
 			})
+			.setHealth(200)
 			.collision([3,0], [42,0], [42,28], [3,28])
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
 			.origin(14,14)
@@ -92,27 +93,30 @@
 				x: bvgGame.TILE_SIZE * 15,
 				y: bvgGame.TILE_SIZE * 5,
 				z: 2,
-				rotation: 90
+				rotation: 90,
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
+			.setHealth(100)
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
 			.origin(14,14)
 			.attr({
 				x: 212,
 				y: bvgGame.TILE_SIZE * 5,
 				z: 2,
-				rotation: 90
+				rotation: 90,
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
+			.setHealth(100)
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
 			.origin(14,14)
 			.attr({
 				x: 184,
 				y: bvgGame.TILE_SIZE * 5,
 				z: 2,
-				rotation: 90
+				rotation: 90,
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
+			.setHealth(100)
 		Crafty.e('2D, Canvas, Obstacle, s_box')
 			.origin(8,8)
 			.attr({
@@ -230,6 +234,25 @@
 				h: 16,
 				z: 100
 			})
+		// 50 Points Bar
+		Crafty.e('2D, Canvas, points_50')
+			.attr({
+				x: 224,
+				y: 14,
+				w: 15,
+				h: 7,
+				z: 100
+			})
+		// 100 Points Bar
+		Crafty.e('2D, Canvas, points_100')
+			.attr({
+				x: 45,
+				y: 14,
+				w: 17,
+				h: 7,
+				z: 100
+			})
+		// Exit Button
 		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
 				x: 536,

@@ -1,11 +1,17 @@
 (function() {
 	Crafty.c('Obstacle', {
-		_health: 100,
+		_base_health: 50,
+		_health: 50,
+		setHealth: function(h) {
+			this._base_health = h
+			this._health = h
+			return this
+		},
 		damage: function() {
-			this._health -= 100
+			this._health -= 5
 
 			// swap for damage sprites
-			if(this._health <= 50) {
+			if(this._health <= this._base_health * 0.5) {
 				if (this.__c.s_barbed_wire_v) {
 					this.toggleComponent('s_barbed_wire_v', 's_barbed_wire_damaged_v')
 				} else if(this.__c.m_box) {
