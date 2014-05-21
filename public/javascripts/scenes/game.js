@@ -77,7 +77,7 @@
 				x = 26
 			}
 
-			Crafty.e('2D, Canvas, s_barbed_wire_damaged_v')
+			Crafty.e('2D, DOM, s_barbed_wire_v')
 				.attr({
 					x: bvgGame.TILE_SIZE * x,
 					y: bvgGame.TILE_SIZE * y,
@@ -85,38 +85,42 @@
 				})
 		};
 		// draw HUD
-		Crafty.e('2D, Canvas, hud_bar')
+		Crafty.e('2D, DOM, hud_bar')
 			.attr({
 				x: 0,
 				y: 0,
 				w: 179,
-				h: 34
+				h: 34,
+				z: 100
 			})
-		Crafty.e('2D, Canvas, hud_bar')
+		Crafty.e('2D, DOM, hud_bar')
 			.attr({
 				x: 178,
 				y: 0,
 				w: 179,
-				h: 34
+				h: 34,
+				z: 100
 			})
-		Crafty.e('2D, Canvas, hud_bar')
+		Crafty.e('2D, DOM, hud_bar')
 			.attr({
 				x: 357,
 				y: 0,
 				w: 179,
-				h: 34
+				h: 34,
+				z: 100
 			})
-		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
+		var button_exit = Crafty.e('2D, DOM, Mouse, b_exit_black')
 			.attr({
 				x: 536,
 				y: 0,
 				w: 32,
-				h: 32
+				h: 32,
+				z: 100
 			})
 			.bind('MouseOver', switchExitToYellowUI)
 			.bind('MouseOut', switchExitToBlackUI)
 			.bind('MouseUp', exitGame)
-		Crafty.e('2D, Canvas, health_bar_yellow')
+		Crafty.e('2D, DOM, health_bar_yellow')
 			.attr({
 				x: 450,
 				y: 292,
@@ -124,7 +128,7 @@
 				h: 24,
 				z: 100
 			})
-		Crafty.e('2D, Canvas, health_yellow')
+		Crafty.e('2D, DOM, health_yellow')
 			.attr({
 				x: 473,
 				y: 298,
@@ -133,14 +137,15 @@
 				z: 100
 			})
 
-
-		player = Crafty.e('2D, Canvas, Player, Collision, Fourway, mc_left')
+		// Add Player
+		player = Crafty.e('2D, Canvas, Player, Collision, Keyboard, Fourway, mc_left')
 			.attr({
 				x: Crafty.stage.elem.clientWidth/2,
 				y: Crafty.stage.elem.clientHeight/2,
 				z: 50
 			})
 			.fourway(2)
+			.collision()
 
 		// Round One Aduio
 		Crafty.audio.play('roundOne')

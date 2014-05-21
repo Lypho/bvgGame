@@ -12,7 +12,7 @@
 		// creates blank button with specified attributes
 		var button_play2 = Crafty.e('2D, Canvas, Mouse, b_blank_black')
 			.attr({
-				x: Crafty.stage.elem.clientWidth*0.5 - 76,
+				x: bvgGame.WIDTH*0.5 - 76,
 				y: 165,
 				w: 200,
 				h: 48
@@ -21,7 +21,7 @@
 		// creates play button with specified attributes
 		var button_play = Crafty.e('2D, Canvas, Mouse, b_play_black')
 			.attr({
-				x: Crafty.stage.elem.clientWidth*0.5 - 124,
+				x: bvgGame.WIDTH*0.5 - 124,
 				y: 165,
 				w: 48,
 				h: 48
@@ -30,7 +30,7 @@
 		// creates blank button with specified attributes
 		var button_help2 = Crafty.e('2D, Canvas, Mouse, b_blank_black')
 			.attr({
-				x: Crafty.stage.elem.clientWidth*0.5 - 76,
+				x: bvgGame.WIDTH*0.5 - 76,
 				y: 165 + button_play._h,
 				w: 200,
 				h: 48
@@ -39,7 +39,7 @@
 		// creates help button with specified attributes
 		var button_help = Crafty.e('2D, Canvas, Mouse, b_help_black')
 			.attr({
-				x: Crafty.stage.elem.clientWidth*0.5 - 124,
+				x: bvgGame.WIDTH*0.5 - 124,
 				y: 165 + button_play._h,
 				w: 48,
 				h: 48
@@ -48,8 +48,8 @@
 		// creates sound button with specified attributes
 		var button_sound = Crafty.e('2D, Canvas, Mouse, b_sound_on')
 			.attr({
-				x: Crafty.stage.elem.clientWidth - 36,
-				y: Crafty.stage.elem.clientHeight - 56,
+				x: bvgGame.WIDTH - 36,
+				y: bvgGame.HEIGHT - 56,
 				w: 32,
 				h: 32
 			})
@@ -59,7 +59,7 @@
 			.attr({
 				x: 0,
 				y: 40,
-				w: Crafty.stage.elem.clientWidth,
+				w: bvgGame.WIDTH,
 				h: 80
 			})
 			.text("bvgGame")
@@ -77,7 +77,7 @@
 			.attr({
 				x: 0,
 				y: 176,
-				w: Crafty.stage.elem.clientWidth + button_help._w,
+				w: bvgGame.WIDTH + button_help._w,
 				h: 24
 			})
 			.text("PLAY")
@@ -96,7 +96,7 @@
 			.attr({
 				x: 0,
 				y: 176 + button_play._h,
-				w: Crafty.stage.elem.clientWidth + button_help._w,
+				w: bvgGame.WIDTH + button_help._w,
 				h: 24
 			})
 			.text("HELP")

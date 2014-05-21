@@ -66,6 +66,7 @@
 			mc_down: 					[194, 83, 16, 20],
 			mc_left: 					[238, 84, 16, 20],
 			mc_right: 					[264, 84, 16, 20],
+			mc_projectile: 				[75, 153, 5, 11],
 		});
 
 		// Display loading text
