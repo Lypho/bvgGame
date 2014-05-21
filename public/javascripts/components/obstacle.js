@@ -32,7 +32,7 @@
 							z: 1,
 							rotation: -90
 						})
-				} else if (this._x < bvgGame.TILE_SIZE*29) {
+				} else if (this._x < bvgGame.TILE_SIZE*29 && Crafty.math.randomInt(0,1) === 1) {
 					var x_modifier = 0
 					var y_modifier = 0
 					// if it's a medium or large sprite randomize where the
