@@ -19,18 +19,25 @@
 					Crafty.e('2D, Canvas, ' + Crafty.math.randomElementOfArray(['m_gray_cracked','m_gray_dirty']))
 						.origin(16, 16)
 						.attr({
-							x: bvgGame.TILE_SIZE * 30,
-							y: bvgGame.TILE_SIZE * 2,
+							x: this._x,
+							y: this._y,
 							z: 1,
 							rotation: -90
 						})
 					Crafty.e('2D, Canvas, ' + Crafty.math.randomElementOfArray(['m_gray_cracked','m_gray_dirty']))
 						.origin(16, 16)
 						.attr({
-							x: bvgGame.TILE_SIZE * 32,
-							y: bvgGame.TILE_SIZE * 2,
+							x: this._x + 32,
+							y: this._y,
 							z: 1,
 							rotation: -90
+						})
+				} else if (this._x < bvgGame.TILE_SIZE*29) {
+					Crafty.e('2D, Canvas, ' + Crafty.math.randomElementOfArray(['s_blue_carpet','s_blue_carpet_bloody','s_blue_carpet_dirty','s_blue_carpet_garbage1','s_blue_carpet_garbage2']))
+						.attr({
+							x: this._x,
+							y: this._y,
+							z: 1,
 						})
 				}
 				this.destroy()

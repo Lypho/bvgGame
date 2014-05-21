@@ -114,6 +114,7 @@
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
 		Crafty.e('2D, Canvas, Obstacle, s_block')
+			.origin(8,8)
 			.attr({
 				x: bvgGame.TILE_SIZE * 12,
 				y: bvgGame.TILE_SIZE * 10,
@@ -121,6 +122,7 @@
 				rotation: 90
 			})
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_block')
+			.origin(14,14)
 			.attr({
 				x: bvgGame.TILE_SIZE * 15,
 				y: bvgGame.TILE_SIZE * 13,
@@ -129,6 +131,7 @@
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_block_gray')
+			.origin(14,14)
 			.attr({
 				x: bvgGame.TILE_SIZE * 15,
 				y: bvgGame.TILE_SIZE * 15,
@@ -137,6 +140,7 @@
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_block')
+			.origin(14,14)
 			.attr({
 				x: bvgGame.TILE_SIZE * 15,
 				y: bvgGame.TILE_SIZE * 17,
