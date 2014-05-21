@@ -1,0 +1,20 @@
+Ben Fairclough
+Fairclough.Ben@gmail.com
+613-899-3977
+http://benfairclough.com/
+
+INSTALL:
+	dependencies: node, npm
+
+	Open up a terminal at the bvgGame directory
+	Type 'npm install -d'
+	Now type 'node app.js' and you'll be able to acces the game at localhost:7007 in your browser
+
+	The project is also currently hosted at http://benfairclough.com/bvgGame
+
+NOTES:
+	- I used git during development, so feel free to take a look at my past commits
+	- This version is only confirmed to be working on Chrome (35.0.1916.114)
+	- The game renders fine on some mobile phones, but the game's controls weren't designed for mobile
+	- Music is provided by Audio Network under the Home/Student Productions License
+	- Art assets are provided by Big Viking Games© 2014
