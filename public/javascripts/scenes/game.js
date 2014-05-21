@@ -3,7 +3,6 @@
 		console.log('--GAME SCENE STARTED--')
 
 		var round = 0
-		var score = 0
 		var current_phase = 'battle'
 		var player;
 
@@ -386,7 +385,7 @@
 				h: 26,
 				z: 100
 			})
-		Crafty.e('2D, DOM, Text')
+		Crafty.e('2D, DOM, Text, Score')
 			.attr({
 				x: 482,
 				y: 270,
@@ -427,6 +426,7 @@
 				y: bvgGame.HEIGHT * 0.5,
 				z: 50,
 				_player_speed: 2,
+				_score: 100,
 			})
 			.fourway(2)
 			.collision()
@@ -465,8 +465,9 @@
 		Crafty.e("2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy")
 			.attr({
 				x: 32,
-				y: bvgGame.HEIGHT * 0.5,
+				y: enemy_y,
 				z: 150,
+				_value: 20,
 			})
 			.reel('e_move_right', 1000, 0, 0, 3)
 			.animate('e_move_right', -1)

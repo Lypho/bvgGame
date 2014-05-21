@@ -2,7 +2,9 @@
 	Crafty.c('e_blueman', {
 		_health: 25,
 		_enemy_speed: 3,
+		_value: 20,
 		init: function() {
+			console.log(this._value)
 			this.bind('EnterFrame', function(){
 				if(Crafty.frame() % 20 === 0) {
 					this.x += this._enemy_speed
@@ -17,31 +19,16 @@
 				if(this.hit('Obstacle')) {
 					this.x = this._x - this._enemy_speed - 2
 				}
-
-				// is shooting
-				// if(Crafty.frame() % 50 === 0) {
-				// 	Crafty.e('2D, DOM, Collision, Mc_Proj, mc_projectile')
-				// 		.attr({
-				// 			x: p_x,
-				// 			y: p_y,
-				// 			z: 50,
-				// 			rotation: rotation_angle,
-				// 			_proj_direction: firing_direction
-				// 		})
-				// 		.origin(3,4)
-				// 		.offsetBoundary(-1)
-				// 		.collision()
-				// 		.onHit('Obstacle', function(){
-				// 			this.hit('Obstacle')[0].obj.damage()
-				// 			this.destroy()
-				// 		})
-				// }
 			})
 		},
 		damage: function() {
 			this._health -= 5
 
 			if(this._health <= 0) {
+
+				Crafty('Player')._score += this._value
+				Crafty('Score').text(Crafty('Player')._score)
+
 				// grand explosion
 				Crafty.e("2D, Canvas, SpriteAnimation, Delay, explosion")
 				.attr({

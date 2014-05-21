@@ -1,5 +1,6 @@
 (function (){
 	Crafty.c('Player', {
+		_score: 100,
 		_health: 85,
 		_direction: 'left',
 		_player_speed: 10,
