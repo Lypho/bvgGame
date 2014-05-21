@@ -423,8 +423,8 @@
 		// Add Player
 		player = Crafty.e('2D, Canvas, Player, Collision, Keyboard, Fourway, mc_left')
 			.attr({
-				x: Crafty.stage.elem.clientWidth/2,
-				y: Crafty.stage.elem.clientHeight/2,
+				x: bvgGame.WIDTH * 0.5,
+				y: bvgGame.HEIGHT * 0.5,
 				z: 50,
 				_player_speed: 2,
 			})
@@ -457,5 +457,18 @@
 			Crafty.audio.stop()
 			Crafty.scene('menu')
 		}
+
+
+		// GAMEPLAY LOGIC STARTS HERE
+		// Enemy Spawning
+		var enemy_y = Crafty.math.randomInt(32,bvgGame.HEIGHT-24)
+		Crafty.e("2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy")
+			.attr({
+				x: 32,
+				y: bvgGame.HEIGHT * 0.5,
+				z: 150,
+			})
+			.reel('e_move_right', 1000, 0, 0, 3)
+			.animate('e_move_right', -1)
 	})
 })();

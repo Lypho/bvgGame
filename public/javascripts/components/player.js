@@ -76,6 +76,10 @@
 								this.hit('Obstacle')[0].obj.damage()
 								this.destroy()
 							})
+							.onHit('e_blueman', function(){
+								this.hit('e_blueman')[0].obj.damage()
+								this.destroy()
+							})
 					}
 				}
 			})

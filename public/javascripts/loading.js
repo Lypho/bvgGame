@@ -6,6 +6,7 @@
 			, '/images/game_graphics/objects.png'
 			, '/images/game_graphics/tileset.png'
 			, '/images/game_graphics/explosion.png'
+			, '/images/game_graphics/enemy_right.png'
 			, '/images/interface_graphics/Background.jpg'
 			, '/images/interface_graphics/Buttons.png'
 			, '/images/interface_graphics/Windows.png']
@@ -96,6 +97,9 @@
 		});
 		Crafty.sprite(40, "/images/game_graphics/explosion.png", {
 		    explosion: [0,0]
+		});
+		Crafty.sprite(24, "/images/game_graphics/enemy_right.png", {
+		    enemy: [0,0]
 		});
 
 		// Display loading text
