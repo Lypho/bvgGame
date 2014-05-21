@@ -243,6 +243,38 @@
 				h: 7,
 				z: 100
 			})
+		Crafty.e('2D, Canvas, m_block')
+			.attr({
+				x: 246,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, m_block_gray')
+			.attr({
+				x: 266,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, m_barrier')
+			.attr({
+				x: 290,
+				y: 8,
+				w: 8,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, m_box')
+			.attr({
+				x: 306,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
 		// 100 Points Bar
 		Crafty.e('2D, Canvas, points_100')
 			.attr({
@@ -250,6 +282,38 @@
 				y: 14,
 				w: 17,
 				h: 7,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, l_ice_pit')
+			.attr({
+				x: 68,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, m_pillar')
+			.attr({
+				x: 88,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, s_foot_trap')
+			.attr({
+				x: 108,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, s_mine')
+			.attr({
+				x: 128,
+				y: 10,
+				w: 16,
+				h: 16,
 				z: 100
 			})
 		// Exit Button
@@ -264,20 +328,45 @@
 			.bind('MouseOver', switchExitToYellowUI)
 			.bind('MouseOut', switchExitToBlackUI)
 			.bind('MouseUp', exitGame)
+		Crafty.e('2D, DOM, points_bar')
+			.attr({
+				x: 488,
+				y: 265,
+				w: 76,
+				h: 26,
+				z: 100
+			})
+		Crafty.e('2D, DOM, Text')
+			.attr({
+				x: 482,
+				y: 270,
+				w: 56,
+				h: 16,
+				z: 100
+			})
+			.text("100")
+			.css({
+				'text-align': 'right',
+			})
+			.textFont({
+				'size': '15px',
+				'weight': 'bold'
+			})
+			.unselectable()
 		Crafty.e('2D, DOM, health_bar_yellow')
 			.attr({
 				x: 450,
 				y: 292,
 				w: 114,
-				h: 24,
+				h: 26,
 				z: 100
 			})
 		Crafty.e('2D, DOM, health_yellow')
 			.attr({
 				x: 473,
 				y: 298,
-				w: 86,
-				h: 13,
+				w: 84,
+				h: 15,
 				z: 100
 			})
 

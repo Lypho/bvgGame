@@ -69,15 +69,19 @@
 			m_barrier: 					[32, 352, 16, 32],
 			m_box: 						[0, 256, 32, 32],
 			m_box_damaged: 				[48, 256, 32, 32],
+			m_pillar: 					[48, 208, 32, 32],
+			m_pillar_damaged: 			[160, 208, 32, 32],
+			l_ice_pit: 					[144, 240, 48, 48],
 		});
 		Crafty.sprite('/images/interface_graphics/Windows.png', {
 			health_bar_red: 			[681, 918, 188, 41],
 			health_red: 				[719, 861, 139, 21],
 			health_bar_blue: 			[681, 1138, 188, 41],
 			health_blue: 				[719, 887, 139, 21],
-			health_bar_yellow: 			[681, 1098, 188, 41],
-			health_yellow: 				[889, 1106, 139, 21],
-			hud_bar: 					[197, 136, 681, 111]
+			health_bar_yellow: 			[681, 1098, 189, 41],
+			health_yellow: 				[890, 1107, 138, 19],
+			hud_bar: 					[197, 136, 681, 111],
+			points_bar: 				[680, 1008, 129, 39],
 		});
 		Crafty.sprite('/images/game_graphics/characters.png', {
 			mc_up: 						[325, 83, 16, 20],

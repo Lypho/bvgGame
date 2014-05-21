@@ -16,6 +16,10 @@
 					this.toggleComponent('s_barbed_wire_v', 's_barbed_wire_damaged_v')
 				} else if(this.__c.m_box) {
 					this.toggleComponent('m_box', 'm_box_damaged')
+				} else if(this.__c.s_box) {
+					this.toggleComponent('s_box', 's_box_damaged')
+				} else if(this.__c.m_pillar) {
+					this.toggleComponent('m_pillar', 'm_pillar_damaged')
 				}
 			}
 
