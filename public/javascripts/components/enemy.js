@@ -30,11 +30,11 @@
 							.offsetBoundary(-1)
 							.collision()
 							.onHit('Obstacle', function(){
-								this.hit('Obstacle')[0].obj.damage()
+								this.hit('Obstacle')[0].obj.damage(5)
 								this.destroy()
 							})
 							.onHit('Player', function(){
-								this.hit('Player')[0].obj.damage()
+								this.hit('Player')[0].obj.damage(5)
 								this.destroy()
 							})
 					}
@@ -53,8 +53,8 @@
 				}
 			})
 		},
-		damage: function() {
-			this._health -= 5
+		damage: function(value) {
+			this._health -= value
 
 			if(this._health <= 0) {
 				// update score

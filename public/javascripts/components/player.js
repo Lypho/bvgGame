@@ -74,11 +74,11 @@
 							.offsetBoundary(-1)
 							.collision()
 							.onHit('Obstacle', function(){
-								this.hit('Obstacle')[0].obj.damage()
+								this.hit('Obstacle')[0].obj.damage(5)
 								this.destroy()
 							})
 							.onHit('e_blueman', function(){
-								this.hit('e_blueman')[0].obj.damage()
+								this.hit('e_blueman')[0].obj.damage(5)
 								this.destroy()
 							})
 					}

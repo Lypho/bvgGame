@@ -517,6 +517,10 @@
 					this.pauseAnimation()
 					this.hit('Foot_Trap')[0].obj.destroy()
 				})
+				.onHit('Fire_Trap', function(){
+					this.damage(50000)
+					this.hit('Fire_Trap')[0].obj.destroy()
+				})
 		}
 		spawnEnemy()
 
