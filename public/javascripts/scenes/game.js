@@ -58,7 +58,7 @@
 			})
 
 		// draw main base
-		Crafty.e('2D, Canvas, m_desk')
+		Crafty.e('2D, Canvas, Obstacle, m_desk')
 			.origin(24, 16)
 			.attr({
 				x: bvgGame.TILE_SIZE * 32 + 16,
@@ -77,7 +77,7 @@
 				x = 26
 			}
 
-			Crafty.e('2D, DOM, s_barbed_wire_v')
+			Crafty.e('2D, Canvas, Obstacle, s_barbed_wire_v')
 				.attr({
 					x: bvgGame.TILE_SIZE * x,
 					y: bvgGame.TILE_SIZE * y,
@@ -142,7 +142,8 @@
 			.attr({
 				x: Crafty.stage.elem.clientWidth/2,
 				y: Crafty.stage.elem.clientHeight/2,
-				z: 50
+				z: 50,
+				_player_speed: 2,
 			})
 			.fourway(2)
 			.collision()

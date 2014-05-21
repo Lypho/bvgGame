@@ -2,6 +2,7 @@
 	Crafty.c('Player', {
 		_health: 85,
 		_direction: 'left',
+		_player_speed: 10,
 		init: function() {
 			this.bind('EnterFrame', function(){
 				// Wall collision
@@ -18,8 +19,21 @@
 					this.y = (bvgGame.HEIGHT - this._h)
 				}
 
+				// Obstacle collision
+				if(this.hit('Obstacle')) {
+					if(this._direction === 'left') {
+						this.x = this._x + this._player_speed + 2
+					} else if(this._direction === 'right') {
+						this.x = this._x - this._player_speed - 2
+					} else if(this._direction === 'up') {
+						this.y = this._y + this._player_speed + 2
+					} else if(this._direction === 'down') {
+						this.y = this._y - this._player_speed - 2
+					}
+				}
+
 				// is shooting
-				if(Crafty.frame() % 10 === 0) {
+				if(Crafty.frame() % 7 === 0) {
 					if(Crafty.keydown.hasOwnProperty(32)) {
 						var firing_direction = 'w'
 						var rotation_angle = 270
