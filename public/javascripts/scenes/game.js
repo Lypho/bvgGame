@@ -113,7 +113,7 @@
 				rotation: 90
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
-		Crafty.e('2D, Canvas, Obstacle, s_block')
+		Crafty.e('2D, Canvas, Obstacle, s_box')
 			.origin(8,8)
 			.attr({
 				x: bvgGame.TILE_SIZE * 12,
@@ -148,7 +148,15 @@
 				rotation: 90
 			})
 			.collision([0,0], [25,0], [25,25], [0,25])
-		Crafty.e('2D, Canvas, Collision, Obstacle, m_stove')
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_barrier')
+			.origin(8,16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 17,
+				z: 2,
+				rotation: 180
+			})
+		Crafty.e('2D, Canvas, Obstacle, m_stove')
 			.attr({
 				x: bvgGame.TILE_SIZE * 30,
 				y: bvgGame.TILE_SIZE * 2,
@@ -157,7 +165,7 @@
 
 
 		// draw HUD
-		Crafty.e('2D, DOM, hud_bar')
+		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
 				x: 0,
 				y: 0,
@@ -165,7 +173,7 @@
 				h: 34,
 				z: 100
 			})
-		Crafty.e('2D, DOM, hud_bar')
+		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
 				x: 178,
 				y: 0,
@@ -173,7 +181,7 @@
 				h: 34,
 				z: 100
 			})
-		Crafty.e('2D, DOM, hud_bar')
+		Crafty.e('2D, Canvas, hud_bar')
 			.attr({
 				x: 357,
 				y: 0,
@@ -181,7 +189,48 @@
 				h: 34,
 				z: 100
 			})
-		var button_exit = Crafty.e('2D, DOM, Mouse, b_exit_black')
+		// 20 Points Bar
+		Crafty.e('2D, Canvas, points_20')
+			.attr({
+				x: 403,
+				y: 14,
+				w: 15,
+				h: 7,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, Mouse, s_caution_block')
+			.attr({
+				x: 425,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, Mouse, s_barbed_wire_v')
+			.attr({
+				x: 445,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, Mouse, s_block')
+			.attr({
+				x: 465,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		Crafty.e('2D, Canvas, Mouse, s_box')
+			.attr({
+				x: 485,
+				y: 10,
+				w: 16,
+				h: 16,
+				z: 100
+			})
+		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
 				x: 536,
 				y: 0,

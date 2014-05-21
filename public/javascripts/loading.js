@@ -50,6 +50,7 @@
 			s_blue_carpet_garbage2: 	[176, 0, 16, 16],
 			s_cross: 					[16, 320, 16, 16],
 			s_caution: 					[160, 64, 16, 16],
+			s_caution_block: 			[80, 288, 16, 16],
 			s_barbed_wire_v: 			[160, 448, 16, 16],
 			s_barbed_wire_damaged_v:	[112, 448, 16, 16],
 			s_block: 					[64, 336, 16, 16],
@@ -84,6 +85,9 @@
 			mc_left: 					[238, 84, 16, 20],
 			mc_right: 					[264, 84, 16, 20],
 			mc_projectile: 				[75, 153, 5, 11],
+			points_20: 					[169, 124, 15, 7],
+			points_50: 					[118, 124, 15, 7],
+			points_100: 				[32, 124, 17, 7],
 		});
 
 		// Display loading text

@@ -7,7 +7,7 @@
 				this.move(this._proj_direction,5)
 
 				// destroy projectile if it's off-screen
-				if ((this._x + this._w) <= 0 || (this._x - this._w) >= bvgGame.WIDTH || (this._y + this._h) <= 32 || (this._y - this._h) >= bvgGame.HEIGHT) {
+				if ((this._x + this._w) <= 0 || (this._x - this._w) >= bvgGame.WIDTH || this._y <= 32 || (this._y - this._h) >= bvgGame.HEIGHT) {
 					this.destroy()
 				}
 			})
