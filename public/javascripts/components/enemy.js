@@ -72,6 +72,16 @@
 				.animate('kaboom', 1)
 				.delay(function() {Crafty('explosion').destroy()}, 1000, 1)
 				this.destroy()
+
+				if(this._x < bvgGame.TILE_SIZE * 29) {
+					Crafty.e('2D, Canvas, s_blue_carpet_bloody')
+						.origin(8,8)
+						.attr({
+							x: this._x,
+							y: this._y,
+							z: 1,
+						})
+				}
 			}
 		}
 	})
