@@ -87,7 +87,7 @@
 				.collision([5,2], [12,2], [12,14], [5,14])
 		};
 
-		// random junk
+		// draw obstacles
 		Crafty.e('2D, Canvas, Collision, Obstacle, m_desk')
 			.origin(24, 16)
 			.attr({
@@ -260,7 +260,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_caution_block', 16, 16, 0, 20)})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_caution_block', 16, 16, 0, 20, 50)})
 		Crafty.e('2D, Canvas, Mouse, s_barbed_wire_v')
 			.attr({
 				x: 445,
@@ -269,7 +269,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_barbed_wire_v', 16, 16, 0, 20)})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_barbed_wire_v', 16, 16, 0, 20, 50)})
 		Crafty.e('2D, Canvas, Mouse, s_block')
 			.attr({
 				x: 465,
@@ -278,7 +278,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_block', 16, 16, 0, 20)})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_block', 16, 16, 0, 20, 50)})
 		Crafty.e('2D, Canvas, Mouse, s_box')
 			.attr({
 				x: 485,
@@ -287,7 +287,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_box', 16, 16, 0, 20)})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_box', 16, 16, 0, 20, 50)})
 		// 50 Points Bar
 		Crafty.e('2D, Canvas, points_50')
 			.attr({
@@ -305,7 +305,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, m_block', 28, 28, 0, 50)})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_block', 28, 28, 0, 50, 100)})
 		Crafty.e('2D, Canvas, Mouse, m_block_gray')
 			.attr({
 				x: 266,
@@ -314,7 +314,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, m_block_gray', 28, 28, 0, 50)})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_block_gray', 28, 28, 0, 50, 100)})
 		Crafty.e('2D, Canvas, Mouse, m_barrier')
 			.attr({
 				x: 290,
@@ -323,7 +323,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, m_barrier', 16, 32, 0, 50)})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_barrier', 16, 32, 0, 50, 100)})
 		Crafty.e('2D, Canvas, Mouse, m_box')
 			.attr({
 				x: 306,
@@ -332,7 +332,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, m_box', 28, 28, 0, 50)})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_box', 28, 28, 0, 50, 100)})
 		// 100 Points Bar
 		Crafty.e('2D, Canvas, points_100')
 			.attr({
@@ -350,7 +350,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, l_ice_pit', 48, 48, 0, 100)})
+			.bind('MouseUp', function(e){createItem('l_ice_pit', 48, 48, 0, 100, 500)})
 		Crafty.e('2D, Canvas, Mouse, m_pillar')
 			.attr({
 				x: 88,
@@ -359,7 +359,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, m_pillar', 32, 32, 0, 100)})
+			.bind('MouseUp', function(e){createItem('Obstacle, m_pillar', 32, 32, 0, 100, 500)})
 		Crafty.e('2D, Canvas, Mouse, s_foot_trap')
 			.attr({
 				x: 108,
@@ -368,7 +368,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_foot_trap', 16, 16, 0, 100)})
+			.bind('MouseUp', function(e){createItem('s_foot_trap', 16, 16, 0, 100, 500)})
 		Crafty.e('2D, Canvas, Mouse, s_mine')
 			.attr({
 				x: 128,
@@ -377,7 +377,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('Obstacle, s_mine', 16, 16, 0, 100)})
+			.bind('MouseUp', function(e){createItem('s_mine', 16, 16, 0, 100, 500)})
 		// Exit Button
 		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
@@ -390,6 +390,7 @@
 			.bind('MouseOver', switchExitToYellowUI)
 			.bind('MouseOut', switchExitToBlackUI)
 			.bind('MouseUp', function(){bvgGame.exitGame()})
+		// bottom left corner HUD
 		Crafty.e('2D, DOM, points_bar')
 			.attr({
 				x: 488,
@@ -423,7 +424,7 @@
 				h: 26,
 				z: 100
 			})
-			.delay(spawnEnemy,3000,-1)
+			.delay(spawnEnemy,3000,-1) // health bar spawns enemies becasue it will never be destroyed
 		Crafty.e('2D, DOM, health_yellow')
 			.attr({
 				x: 473,
@@ -433,7 +434,7 @@
 				z: 100
 			})
 
-		// Add Player
+		// Add Main Character
 		player = Crafty.e('2D, Canvas, Player, Collision, Keyboard, Fourway, mc_left')
 			.attr({
 				x: bvgGame.WIDTH * 0.5,
@@ -467,7 +468,7 @@
 		}
 
 		// creates the item that was clicked
-		function createItem(item, w, h, r, price) {
+		function createItem(item, w, h, r, price, health) {
 			console.log(item + ":" + w + ":" + h + ":" + r + ":" + price)
 
 			if(Crafty('Player')._score >= price) {
@@ -480,9 +481,10 @@
 						y: bvgGame.HEIGHT * 0.5,
 						w: w,
 						h: h,
-						z: 200,
+						z: 2,
 						rotation: r
 					})
+					.setHealth(health)
 			}
 		}
 
@@ -492,8 +494,6 @@
 			Crafty.scene('menu')
 		}
 
-
-		// GAMEPLAY LOGIC STARTS HERE
 		// Enemy Spawning
 		function spawnEnemy() {
 			var enemy_y = Crafty.math.randomInt(32,bvgGame.HEIGHT-24)

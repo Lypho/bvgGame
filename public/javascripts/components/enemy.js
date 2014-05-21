@@ -49,7 +49,7 @@
 			this._health -= 5
 
 			if(this._health <= 0) {
-
+				// update score
 				Crafty('Player')._score += this._value
 				Crafty('Score').text(Crafty('Player')._score)
 
