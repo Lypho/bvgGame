@@ -260,6 +260,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_caution_block', 16, 16, 0, 20)})
 		Crafty.e('2D, Canvas, Mouse, s_barbed_wire_v')
 			.attr({
 				x: 445,
@@ -268,6 +269,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_barbed_wire_v', 16, 16, 0, 20)})
 		Crafty.e('2D, Canvas, Mouse, s_block')
 			.attr({
 				x: 465,
@@ -276,6 +278,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_block', 16, 16, 0, 20)})
 		Crafty.e('2D, Canvas, Mouse, s_box')
 			.attr({
 				x: 485,
@@ -284,6 +287,7 @@
 				h: 16,
 				z: 100
 			})
+			.bind('MouseUp', function(e){createItem('Obstacle, s_box', 16, 16, 0, 20)})
 		// 50 Points Bar
 		Crafty.e('2D, Canvas, points_50')
 			.attr({
@@ -454,7 +458,27 @@
 				})
 		}
 
-		// Exits the game
+		// creates the item that was clicked
+		function createItem(item, w, h, r, price) {
+			console.log(item + ":" + w + ":" + h + ":" + r + ":" + price)
+
+			if(Crafty('Player')._score >= price) {
+				Crafty('Player')._score -= price
+				Crafty('Score').text(Crafty('Player')._score)
+				Crafty.e('2D, Canvas, Collision, Mouse, Draggable, ' + item)
+					.origin(w * 0.5, h * 0.5)
+					.attr({
+						x: bvgGame.WIDTH * 0.5,
+						y: bvgGame.HEIGHT * 0.5,
+						w: w,
+						h: h,
+						z: 200,
+						rotation: r
+					})
+			}
+		}
+
+		// exits the game
 		bvgGame.exitGame = function() {
 			Crafty.audio.stop()
 			Crafty.scene('menu')
@@ -465,7 +489,7 @@
 		// Enemy Spawning
 		function spawnEnemy() {
 			var enemy_y = Crafty.math.randomInt(32,bvgGame.HEIGHT-24)
-			Crafty.e("2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy")
+			Crafty.e('2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy')
 				.attr({
 					x: -24,
 					y: enemy_y,
