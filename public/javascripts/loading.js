@@ -5,6 +5,7 @@
 			['/images/game_graphics/characters.png'
 			, '/images/game_graphics/objects.png'
 			, '/images/game_graphics/tileset.png'
+			, '/images/game_graphics/explosion.png'
 			, '/images/interface_graphics/Background.jpg'
 			, '/images/interface_graphics/Buttons.png'
 			, '/images/interface_graphics/Windows.png']
@@ -92,6 +93,9 @@
 			points_20: 					[169, 124, 15, 7],
 			points_50: 					[118, 124, 15, 7],
 			points_100: 				[32, 124, 17, 7],
+		});
+		Crafty.sprite(40, "/images/game_graphics/explosion.png", {
+		    explosion: [0,0]
 		});
 
 		// Display loading text

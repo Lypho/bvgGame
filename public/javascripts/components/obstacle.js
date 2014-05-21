@@ -58,7 +58,18 @@
 							z: 1,
 						})
 				}
+				// grand explosion
+				Crafty.e("2D, Canvas, SpriteAnimation, Delay, explosion")
+				.attr({
+					x: this._x,
+					y: this._y,
+					z: 150,
+				})
+				.reel('kaboom', 1000, 0, 0, 9)
+				.animate('kaboom', 1)
+				.delay(function() {Crafty('explosion').destroy()}, 1000, 1)
 				this.destroy()
+
 			}
 		}
 	})
