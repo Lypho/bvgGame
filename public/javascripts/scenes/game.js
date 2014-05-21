@@ -447,6 +447,7 @@
 			.collision()
 
 		// Round One Aduio
+		Crafty.audio.play('gameTheme', -1, 0.6)
 		Crafty.audio.play('roundOne')
 
 		// swaps exit button images on mouse over
@@ -491,7 +492,7 @@
 		// exits the game
 		bvgGame.exitGame = function() {
 			Crafty.audio.stop()
-			Crafty.audio.play('menuTheme', 1, 0.4)
+			Crafty.audio.play('menuTheme', 1, 0.6)
 			Crafty.scene('menu')
 		}
 

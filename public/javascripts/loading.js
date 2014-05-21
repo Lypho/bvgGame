@@ -12,12 +12,13 @@
 			, '/images/interface_graphics/Windows.png']
 		, function() {
 			// Auto-play main theme
-			Crafty.audio.play('menuTheme', 1, 0.4)
+			Crafty.audio.play('menuTheme', 1, 0.6)
 			Crafty.scene('menu')
 		});
 
 		Crafty.audio.add({
 			menuTheme: ['/audio/starquake.mp3'],
+			gameTheme: ['/audio/Galaxy.mp3'],
 			roundOne: ['/audio/RoundOne.mp3']
 		})
 

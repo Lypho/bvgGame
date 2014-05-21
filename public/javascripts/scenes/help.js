@@ -5,7 +5,7 @@
 		var page_index = 0
 		var text_title = ['Controls', 'Buying Items']
 		var text_content = ['Movement -> WASD Shoot -> SPACE', 'Click an item in the top menu to purchase it using your score as currency. That item will then spawn in the center of the stage. You can then drag the item to your preferred location.']
-		var text_size = ['40px', '25px']
+		var text_size = ['40px', '24px']
 
 		// background
 		Crafty.e('2D, Canvas, help_box')
