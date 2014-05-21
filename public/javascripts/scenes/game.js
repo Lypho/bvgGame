@@ -377,7 +377,7 @@
 			})
 			.bind('MouseOver', switchExitToYellowUI)
 			.bind('MouseOut', switchExitToBlackUI)
-			.bind('MouseUp', bvgGame.exitGame)
+			.bind('MouseUp', function(){bvgGame.exitGame()})
 		Crafty.e('2D, DOM, points_bar')
 			.attr({
 				x: 488,
@@ -454,7 +454,7 @@
 				})
 		}
 
-		// Opens Settings Menu
+		// Exits the game
 		bvgGame.exitGame = function() {
 			Crafty.audio.stop()
 			Crafty.scene('menu')
