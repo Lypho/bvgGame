@@ -70,8 +70,12 @@
 								_proj_direction: firing_direction
 							})
 							.origin(3,4)
+							.offsetBoundary(-1)
 							.collision()
-							.onHit('Player', function(){console.log('ouch!')})
+							.onHit('Obstacle', function(){
+								this.hit('Obstacle')[0].obj.damage()
+								this.destroy()
+							})
 					}
 				}
 			})

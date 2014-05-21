@@ -57,8 +57,27 @@
 				rotation: -90
 			})
 
-		// draw main base
-		Crafty.e('2D, Canvas, Obstacle, m_desk')
+		// draw default barbed wire
+		for (var y = 2; y < 20; y++) {
+			var x = 0
+
+			if (y >= 6 && y <= 14) {
+				x = 21
+			} else {
+				x = 26
+			}
+
+			Crafty.e('2D, Canvas, Collision, Obstacle, Cover, s_barbed_wire_v')
+				.attr({
+					x: bvgGame.TILE_SIZE * x,
+					y: bvgGame.TILE_SIZE * y,
+					z: 2
+				})
+				.collision([5,2], [12,2], [12,14], [5,14])
+		};
+
+		// random junk
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_desk')
 			.origin(24, 16)
 			.attr({
 				x: bvgGame.TILE_SIZE * 32 + 16,
@@ -66,24 +85,73 @@
 				z: 10,
 				rotation: 90
 			})
+			.collision([3,0], [42,0], [42,28], [3,28])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
+			.origin(14,14)
+			.attr({
+				x: bvgGame.TILE_SIZE * 15,
+				y: bvgGame.TILE_SIZE * 5,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
+			.origin(14,14)
+			.attr({
+				x: 212,
+				y: bvgGame.TILE_SIZE * 5,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_box')
+			.origin(14,14)
+			.attr({
+				x: 184,
+				y: bvgGame.TILE_SIZE * 5,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Obstacle, s_block')
+			.attr({
+				x: bvgGame.TILE_SIZE * 12,
+				y: bvgGame.TILE_SIZE * 10,
+				z: 2,
+				rotation: 90
+			})
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_block')
+			.attr({
+				x: bvgGame.TILE_SIZE * 15,
+				y: bvgGame.TILE_SIZE * 13,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_block_gray')
+			.attr({
+				x: bvgGame.TILE_SIZE * 15,
+				y: bvgGame.TILE_SIZE * 15,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_block')
+			.attr({
+				x: bvgGame.TILE_SIZE * 15,
+				y: bvgGame.TILE_SIZE * 17,
+				z: 2,
+				rotation: 90
+			})
+			.collision([0,0], [25,0], [25,25], [0,25])
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_stove')
+			.attr({
+				x: bvgGame.TILE_SIZE * 30,
+				y: bvgGame.TILE_SIZE * 2,
+				z: 2,
+			})
 
-		// draw default barbed wire
-		for (var y = 2; y < 20; y++) {
-			var x = 0
 
-			if (y >= 6 && y <= 14) {
-				x = 23
-			} else {
-				x = 26
-			}
-
-			Crafty.e('2D, Canvas, Obstacle, s_barbed_wire_v')
-				.attr({
-					x: bvgGame.TILE_SIZE * x,
-					y: bvgGame.TILE_SIZE * y,
-					z: 2
-				})
-		};
 		// draw HUD
 		Crafty.e('2D, DOM, hud_bar')
 			.attr({
@@ -132,7 +200,7 @@
 			.attr({
 				x: 473,
 				y: 298,
-				w: 85,
+				w: 86,
 				h: 13,
 				z: 100
 			})

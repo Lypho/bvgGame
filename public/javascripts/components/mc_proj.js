@@ -1,4 +1,4 @@
-(function (){
+(function(){
 	Crafty.c('Mc_Proj', {
 		_proj_direction: 'w',
 		init: function() {
