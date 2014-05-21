@@ -3,9 +3,16 @@
 		_health: 25,
 		_enemy_speed: 3,
 		_value: 20,
+		_slow: false,
+		_stopped: false,
 		init: function() {
 			this.bind('EnterFrame', function(){
-				if(Crafty.frame() % 20 === 0) {
+				var frame_modifier = 20
+				if(this._slow) {
+					frame_modifier = 50
+				}
+
+				if(Crafty.frame() % frame_modifier === 0) {
 					// move
 					this.x += this._enemy_speed
 					// shoot

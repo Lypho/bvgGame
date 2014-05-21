@@ -210,7 +210,7 @@
 				rotation: 90
 			})
 			.setHealth(400)
-		Crafty.e('2D, Canvas, l_ice_pit')
+		Crafty.e('2D, Canvas, Ice_Trap, l_ice_pit')
 			.attr({
 				x: bvgGame.TILE_SIZE * 4,
 				y: bvgGame.TILE_SIZE * 9,
@@ -350,7 +350,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('l_ice_pit', 48, 48, 0, 100, 500)})
+			.bind('MouseUp', function(e){createItem('Ice_Trap, l_ice_pit', 48, 48, 0, 100, 500)})
 		Crafty.e('2D, Canvas, Mouse, m_pillar')
 			.attr({
 				x: 88,
@@ -368,7 +368,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('s_foot_trap', 16, 16, 0, 100, 500)})
+			.bind('MouseUp', function(e){createItem('Foot_Trap, s_foot_trap', 16, 16, 0, 100, 500)})
 		Crafty.e('2D, Canvas, Mouse, s_mine')
 			.attr({
 				x: 128,
@@ -377,7 +377,7 @@
 				h: 16,
 				z: 100
 			})
-			.bind('MouseUp', function(e){createItem('s_mine', 16, 16, 0, 100, 500)})
+			.bind('MouseUp', function(e){createItem('Fire_Trap, s_mine', 16, 16, 0, 100, 500)})
 		// Exit Button
 		var button_exit = Crafty.e('2D, Canvas, Mouse, b_exit_black')
 			.attr({
@@ -441,7 +441,7 @@
 				y: bvgGame.HEIGHT * 0.5,
 				z: 50,
 				_player_speed: 2,
-				_score: 1000,
+				_score: 100,
 			})
 			.fourway(2)
 			.collision()
@@ -506,6 +506,11 @@
 				})
 				.reel('e_move_right', 1000, 0, 0, 3)
 				.animate('e_move_right', -1)
+				.onHit('Ice_Trap', function(){
+					this._slow = true
+				}, function(){
+					this._slow = false
+				})
 		}
 		spawnEnemy()
 
