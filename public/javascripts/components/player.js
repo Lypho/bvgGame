@@ -1,7 +1,7 @@
 (function (){
 	Crafty.c('Player', {
 		_score: 100,
-		_health: 85,
+		_health: 850,
 		_direction: 'left',
 		_player_speed: 10,
 		init: function() {
@@ -106,5 +106,13 @@
 				}
 			})
 		},
+		damage: function() {
+			this._health -= 5;
+			Crafty('health_yellow').w = this._health * 0.1
+
+			if(this._health <= 0) {
+				bvgGame.exitGame()
+			}
+		}
 	})
 }())

@@ -1,5 +1,6 @@
 (function() {
 	Crafty.scene('game', function() {
+		window.bvgGame = window.bvgGame || {}
 		console.log('--GAME SCENE STARTED--')
 
 		var round = 0
@@ -376,7 +377,7 @@
 			})
 			.bind('MouseOver', switchExitToYellowUI)
 			.bind('MouseOut', switchExitToBlackUI)
-			.bind('MouseUp', exitGame)
+			.bind('MouseUp', bvgGame.exitGame)
 		Crafty.e('2D, DOM, points_bar')
 			.attr({
 				x: 488,
@@ -402,7 +403,7 @@
 				'weight': 'bold'
 			})
 			.unselectable()
-		Crafty.e('2D, DOM, health_bar_yellow')
+		Crafty.e('2D, DOM, Delay, health_bar_yellow')
 			.attr({
 				x: 450,
 				y: 292,
@@ -410,6 +411,7 @@
 				h: 26,
 				z: 100
 			})
+			.delay(spawnEnemy,3000,-1)
 		Crafty.e('2D, DOM, health_yellow')
 			.attr({
 				x: 473,
@@ -453,7 +455,7 @@
 		}
 
 		// Opens Settings Menu
-		function exitGame() {
+		bvgGame.exitGame = function() {
 			Crafty.audio.stop()
 			Crafty.scene('menu')
 		}
@@ -461,15 +463,19 @@
 
 		// GAMEPLAY LOGIC STARTS HERE
 		// Enemy Spawning
-		var enemy_y = Crafty.math.randomInt(32,bvgGame.HEIGHT-24)
-		Crafty.e("2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy")
-			.attr({
-				x: 32,
-				y: enemy_y,
-				z: 150,
-				_value: 20,
-			})
-			.reel('e_move_right', 1000, 0, 0, 3)
-			.animate('e_move_right', -1)
+		function spawnEnemy() {
+			var enemy_y = Crafty.math.randomInt(32,bvgGame.HEIGHT-24)
+			Crafty.e("2D, Canvas, SpriteAnimation, Collision, e_blueman, enemy")
+				.attr({
+					x: -24,
+					y: enemy_y,
+					z: 150,
+					_value: 20,
+				})
+				.reel('e_move_right', 1000, 0, 0, 3)
+				.animate('e_move_right', -1)
+		}
+		spawnEnemy()
+
 	})
 })();

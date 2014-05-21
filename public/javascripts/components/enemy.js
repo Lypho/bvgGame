@@ -4,15 +4,39 @@
 		_enemy_speed: 3,
 		_value: 20,
 		init: function() {
-			console.log(this._value)
 			this.bind('EnterFrame', function(){
 				if(Crafty.frame() % 20 === 0) {
+					// move
 					this.x += this._enemy_speed
+					// shoot
+					if(Crafty.math.randomInt(0,1) === 1) {
+						Crafty.e('2D, DOM, Collision, Mc_Proj, mc_projectile')
+							.attr({
+								x: this._x + 9,
+								y: this._y + 6,
+								z: 50,
+								rotation: 90,
+								_proj_direction: 'e'
+							})
+							.origin(3,4)
+							.offsetBoundary(-1)
+							.collision()
+							.onHit('Obstacle', function(){
+								this.hit('Obstacle')[0].obj.damage()
+								this.destroy()
+							})
+							.onHit('Player', function(){
+								this.hit('Player')[0].obj.damage()
+								this.destroy()
+							})
+					}
 				}
 
 				// Passed right wall
-				if((this._x + this._w) >= bvgGame.WIDTH) {
-					this.x = (bvgGame.WIDTH - this._w)
+				if((this._x - this._w) >= bvgGame.WIDTH) {
+					Crafty('Player')._score -= this._value
+					Crafty('Score').text(Crafty('Player')._score)
+					this.destroy()
 				}
 
 				// Obstacle collision
