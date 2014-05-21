@@ -27,14 +27,25 @@
 							rotation: -90
 						})
 				} else if(x < 29) {
-					Crafty.e('2D, Canvas, s_blue_carpet')
-						.origin(8,8)
-						.attr({
-							x: bvgGame.TILE_SIZE * x,
-							y: bvgGame.TILE_SIZE * y,
-							z: 1,
-							rotation: Crafty.math.randomElementOfArray([0,90,180,270])
-						})
+					if (x >= 3 && x <= 7 && y >= 8 && y <= 12) {
+						Crafty.e('2D, Canvas, s_gray')
+							.origin(8,8)
+							.attr({
+								x: bvgGame.TILE_SIZE * x,
+								y: bvgGame.TILE_SIZE * y,
+								z: 1,
+								rotation: 90
+							})
+					} else {
+						Crafty.e('2D, Canvas, s_blue_carpet')
+							.origin(8,8)
+							.attr({
+								x: bvgGame.TILE_SIZE * x,
+								y: bvgGame.TILE_SIZE * y,
+								z: 1,
+								rotation: Crafty.math.randomElementOfArray([0,90,180,270])
+							})
+					}
 				}
 			}
 		}
@@ -81,7 +92,7 @@
 			.origin(24, 16)
 			.attr({
 				x: bvgGame.TILE_SIZE * 32 + 16,
-				y: bvgGame.TILE_SIZE * 10,
+				y: bvgGame.TILE_SIZE * 10 - 8,
 				z: 10,
 				rotation: 90,
 			})
@@ -91,7 +102,7 @@
 			.origin(14,14)
 			.attr({
 				x: bvgGame.TILE_SIZE * 15,
-				y: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 2 + 4,
 				z: 2,
 				rotation: 90,
 			})
@@ -101,7 +112,7 @@
 			.origin(14,14)
 			.attr({
 				x: 212,
-				y: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 2 + 4,
 				z: 2,
 				rotation: 90,
 			})
@@ -111,7 +122,7 @@
 			.origin(14,14)
 			.attr({
 				x: 184,
-				y: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 2 + 4,
 				z: 2,
 				rotation: 90,
 			})
@@ -160,10 +171,49 @@
 				z: 2,
 				rotation: 180
 			})
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_barrier')
+			.origin(8,16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 15,
+				z: 2,
+				rotation: 180
+			})
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_barrier')
+			.origin(8,16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 3,
+				z: 2,
+				rotation: 180
+			})
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_barrier')
+			.origin(8,16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 5,
+				y: bvgGame.TILE_SIZE * 5,
+				z: 2,
+				rotation: 180
+			})
 		Crafty.e('2D, Canvas, Obstacle, m_stove')
 			.attr({
 				x: bvgGame.TILE_SIZE * 30,
 				y: bvgGame.TILE_SIZE * 2,
+				z: 2,
+			})
+		Crafty.e('2D, Canvas, Collision, Obstacle, m_pillar')
+			.origin(16,16)
+			.attr({
+				x: bvgGame.TILE_SIZE * 25,
+				y: bvgGame.TILE_SIZE * 9 + 8,
+				z: 2,
+				rotation: 90
+			})
+			.setHealth(400)
+		Crafty.e('2D, Canvas, l_ice_pit')
+			.attr({
+				x: bvgGame.TILE_SIZE * 4,
+				y: bvgGame.TILE_SIZE * 9,
 				z: 2,
 			})
 
