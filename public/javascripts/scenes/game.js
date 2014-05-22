@@ -33,7 +33,7 @@
 							.attr({
 								x: bvgGame.TILE_SIZE * x,
 								y: bvgGame.TILE_SIZE * y,
-								z: 1,
+								z: 2,
 								rotation: 90
 							})
 					} else {
