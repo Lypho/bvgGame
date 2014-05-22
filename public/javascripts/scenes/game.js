@@ -15,7 +15,7 @@
 						.attr({
 							x: bvgGame.TILE_SIZE * x,
 							y: bvgGame.TILE_SIZE * y,
-							z: 1
+							z: 2
 						})
 				} else if(x > 29 && (x % 2 === 0) && (y % 2 === 0)) {
 					Crafty.e('2D, Canvas, m_gray')
@@ -23,7 +23,7 @@
 						.attr({
 							x: bvgGame.TILE_SIZE * x,
 							y: bvgGame.TILE_SIZE * y,
-							z: 1,
+							z: 2,
 							rotation: -90
 						})
 				} else if(x < 29) {
@@ -56,7 +56,7 @@
 			.attr({
 				x: bvgGame.TILE_SIZE * 32,
 				y: bvgGame.TILE_SIZE * 4,
-				z: 1,
+				z: 2,
 				rotation: -90
 			})
 		Crafty.e('2D, Canvas, m_egf')
@@ -64,7 +64,7 @@
 			.attr({
 				x: bvgGame.TILE_SIZE * 32,
 				y: bvgGame.TILE_SIZE * 16,
-				z: 1,
+				z: 2,
 				rotation: -90
 			})
 

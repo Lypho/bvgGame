@@ -31,7 +31,7 @@
 						.attr({
 							x: this._x,
 							y: this._y,
-							z: 1,
+							z: 2,
 							rotation: -90
 						})
 					Crafty.e('2D, Canvas, ' + Crafty.math.randomElementOfArray(['m_gray_cracked','m_gray_dirty']))
@@ -39,7 +39,7 @@
 						.attr({
 							x: this._x + 32,
 							y: this._y,
-							z: 1,
+							z: 2,
 							rotation: -90
 						})
 				} else if (this._x < bvgGame.TILE_SIZE*29 && (Crafty.math.randomInt(1,100) > 30)) {
