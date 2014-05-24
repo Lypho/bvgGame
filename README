@@ -8,7 +8,7 @@ INSTALL:
 
 	Open up a terminal at the bvgGame directory
 	Type 'npm install -d'
-	Now type 'node app.js' and you'll be able to acces the game at localhost:7007 in your browser
+	Now type 'node app.js' and you'll be able to access the game at localhost:7007 in your browser
 
 	The project is also currently hosted at http://benfairclough.com/bvgGame
 
