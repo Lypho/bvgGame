@@ -1,6 +1,5 @@
 Ben Fairclough
-Fairclough.Ben@gmail.com
-http://benfairclough.com/
+https://benfairclough.com/
 
 INSTALL:
 	dependencies: node, npm
@@ -8,8 +7,6 @@ INSTALL:
 	Open up a terminal at the bvgGame directory
 	Type 'npm install -d'
 	Now type 'node app.js' and you'll be able to access the game at localhost:7007 in your browser
-
-	The project is also currently hosted at http://benfairclough.com/bvgGame
 
 NOTES:
 	- I used git during development, so feel free to take a look at my past commits
